@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction Charts</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    
+    <!-- Line Chart -->
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawLineChart);
+
+        function drawLineChart() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('number', 'Age');
+            data.addColumn('number', 'Heart Disease Probability');
+            
+            // Example data
+            data.addRow([30, 0.7]);
+            data.addRow([40, 0.5]);
+            data.addRow([50, 0.3]);
+            data.addRow([60, 0.8]);
+            
+            var options = {
+                title: 'Line Chart: Age vs. Heart Disease Probability',
+                curveType: 'function',
+                legend: { position: 'bottom' }
+            };
+            
+            var chart = new google.visualization.LineChart(document.getElementById('lineChart'));
+            chart.draw(data, options);
+        }
+    </script>
+    
+    <!-- Scatter Plot -->
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawScatterPlot);
+
+        function drawScatterPlot() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('number', 'Age');
+            data.addColumn('number', 'Heart Disease Probability');
+            
+            // Example data
+            data.addRow([30, 0.7]);
+            data.addRow([40, 0.5]);
+            data.addRow([50, 0.3]);
+            data.addRow([60, 0.8]);
+            
+            var options = {
+                title: 'Scatter Plot: Age vs. Heart Disease Probability',
+                hAxis: { title: 'Age' },
+                vAxis: { title: 'Heart Disease Probability' },
+                legend: { position: 'none' }
+            };
+            
+            var chart = new google.visualization.ScatterChart(document.getElementById('scatterPlot'));
+            chart.draw(data, options);
+        }
+    </script>
+    
+    <!-- Bar Chart -->
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawBarChart);
+
+        function drawBarChart() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Age Group');
+            data.addColumn('number', 'Average Heart Disease Probability');
+            
+            // Example data
+            data.addRow(['30-39', 0.6]);
+            data.addRow(['40-49', 0.4]);
+            data.addRow(['50-59', 0.3]);
+            data.addRow(['60+', 0.7]);
+            
+            var options = {
+                title: 'Bar Chart: Age Groups and Heart Disease Probability',
+                hAxis: { title: 'Age Group' },
+                vAxis: { title: 'Average Heart Disease Probability' }
+            };
+            
+            var chart = new google.visualization.BarChart(document.getElementById('barChart'));
+            chart.draw(data, options);
+        }
+    </script>
+    
+    <!-- Pie Chart -->
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawPieChart);
+
+        function drawPieChart() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Heart Disease Status');
+            data.addColumn('number', 'Cases');
+            
+            // Example data
+            data.addRow(['Heart Disease', 75]);
+            data.addRow(['No Heart Disease', 25]);
+            
+            var options = {
+                title: 'Pie Chart: Distribution of Heart Disease Cases'
+            };
+            
+            var chart = new google.visualization.PieChart(document.getElementById('pieChart'));
+            chart.draw(data, options);
+        }
+    </script>
+    
+    <!-- Area Chart -->
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawAreaChart);
+
+        function drawAreaChart() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('number', 'Age');
+            data.addColumn('number', 'Heart Disease Probability');
+            
+            // Example data
+            data.addRow([30, 0.7]);
+            data.addRow([40, 0.5]);
+            data.addRow([50, 0.3]);
+            data.addRow([60, 0.8]);
+            
+            var options = {
+                title: 'Area Chart: Age vs. Heart Disease Probability',
+                isStacked: true,
+                legend: { position: 'bottom' }
+            };
+            
+            var chart = new google.visualization.AreaChart(document.getElementById('areaChart'));
+            chart.draw(data, options);
+        }
+    </script>
+    
+    <!-- Histogram -->
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawHistogram);
+
+        function drawHistogram() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('number', 'Age');
+            
+            // Example data
+            data.addRow([32]);
+            data.addRow([38]);
+            data.addRow([43]);
+            data.addRow([49]);
+            data.addRow([51]);
+            data.addRow([59]);
+            data.addRow([63]);
+            
+            var options = {
+                title: 'Histogram: Age Distribution of Heart Disease Probability',
+                hAxis: { title: 'Age' },
+                vAxis: { title: 'Frequency' }
+            };
+            
+            var chart = new google.visualization.Histogram(document.getElementById('histogram'));
+            chart.draw(data, options);
+        }
+    </script>
+</head>
+<body>  
+    <h1 style="text-align: center; background-color: aliceblue;">Charts Using Google Charts Api and D3.js</h1>
+    
+    <div id="barChart" style="width: 100%; height: 400px;"></div>
+    <div id="pieChart" style="width: 100%; height: 400px;"></div>
+    <div id="areaChart" style="width: 100%; height: 400px;"></div>
+    <div id="histogram" style="width: 100%; height: 400px;"></div>
+    <div id="lineChart" style="width: 100%; height: 400px;"></div>
+    <div id="scatterPlot" style="width: 100%; height: 400px;"></div>
+</body>
+</html>
